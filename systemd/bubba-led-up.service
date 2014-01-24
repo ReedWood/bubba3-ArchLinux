@@ -1,0 +1,11 @@
+[Unit]
+Description=Switch LED of Bubba server to green when system has booted
+After=multi-user.target
+
+[Service]
+Type=oneshot
+#User=root
+ExecStart=/usr/bin/sh -c "echo 2 > /sys/bus/platform/devices/bubbatwo/color"
+
+[Install]
+WantedBy=multi-user.target
